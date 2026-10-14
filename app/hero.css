@@ -1,0 +1,24 @@
+/* Intro hero banners */
+.hero{position:relative;overflow:hidden;border-radius:16px;padding:14px 14px 12px;margin-bottom:14px;color:#fff;animation:heroIn .55s var(--spring) both}
+.hero.bad{background:linear-gradient(135deg,#ff5a5f 0%,#f2994a 100%);box-shadow:0 8px 20px rgba(242,90,95,.32)}
+.hero.good{background:linear-gradient(135deg,#1d4fb8 0%,#2b7de9 55%,#1fa855 130%);box-shadow:0 8px 20px rgba(43,125,233,.35)}
+.hero::after{content:"";position:absolute;right:-30px;top:-40px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.14)}
+.hero-k{font-size:10.5px;font-weight:900;letter-spacing:.12em;opacity:.9}
+.hero-h{font-size:19px;font-weight:900;line-height:1.2;margin:3px 0 10px;letter-spacing:-.01em}
+.hero-pills{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
+.hpill{display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:999px;padding:4px 10px 4px 4px;font-size:12px;font-weight:800;opacity:0;animation:pop .45s var(--spring) both}
+.hero.bad .hpill{color:#c0392b}
+.hero.good .hpill{color:#1d4fb8}
+.hx{width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;font-size:11px;color:#fff}
+.hero.bad .hx{background:#e5484d}
+.hero.good .hx{background:#1fa855}
+.hero.bad .hpill{animation:pop .45s var(--spring) both,wob .5s ease-in-out .9s 1}
+.hero-spark{position:absolute;inset:0;pointer-events:none}
+.hero-spark i{position:absolute;left:50%;top:40%;width:6px;height:6px;border-radius:2px;background:#ffd84d;opacity:0;animation:fly 1s ease-out .25s forwards}
+.hero-spark i:nth-child(even){background:#fff}
+.hero-spark i:nth-child(1){--x:-130px;--y:-40px}.hero-spark i:nth-child(2){--x:130px;--y:-35px}.hero-spark i:nth-child(3){--x:-90px;--y:40px}.hero-spark i:nth-child(4){--x:100px;--y:45px}.hero-spark i:nth-child(5){--x:-40px;--y:-60px}.hero-spark i:nth-child(6){--x:50px;--y:-60px}.hero-spark i:nth-child(7){--x:-150px;--y:10px}.hero-spark i:nth-child(8){--x:150px;--y:5px}
+@keyframes heroIn{0%{opacity:0;transform:translateY(-8px) scale(.96)}100%{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:scale(1)}}
+@keyframes wob{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.hero,.hpill{animation:none;opacity:1}.hero-spark{display:none}}
+.cta-bar{z-index:20}
